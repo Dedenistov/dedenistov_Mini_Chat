@@ -1,0 +1,31 @@
+<!-- DEDENISTOV_YURII -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mini Chat</title>
+  <meta charset="utf-8" />
+</head>
+<body>
+  <div id="app">
+    <p>
+      <input type="text" v-model="newTextString" placeholder="Введіть текст"/>
+    <button v-on:click="TextStrings.push(newTextString)">Додати</button>
+    </p>
+    <ul>
+      <li v-for="(TextString, index) in TextStrings">
+      <p>{{ TextString }} <button v-on:click="TextStrings.splice(index,1)">X</button></p>
+    </ul>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        newTextString: '',
+        TextStrings: ['Просто текст']
+      }
+    });
+</script>
+</body>
+</html>
+<!-- DEDENISTOV_YURII -->
